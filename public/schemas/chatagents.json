@@ -1,0 +1,91 @@
+{
+  "$schema":"http://json-schema.org/draft-06/schema#",
+  "description": "Register as an Support Agent",
+  "type": "object",
+  "required": ["name","experience","description","price"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Title",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "experience": {
+      "type": "string",
+      "title": "Experience",
+      "enum": [
+        "Fresher / No Experience",
+        "0 to 6 months experience",
+        "1 to 2 years experience",
+        "2 to 4 years experience",
+        "more than 5 years"
+      ],
+      "default":"0 to 6 months experience"
+    },
+    "interesthour": {
+      "type": "string",
+      "title": "Interested Working Hours",
+      "enum": [
+        "Daily 2 hours",
+	"Daily 4 hours",
+	"Daily 6 hours",
+	"Daily 8 hours",
+	"Daily 10 hours",
+	"Daily 12 hours",
+	"Weekly 7 hours",
+	"Weekly 21 hours",
+	"Weekly 35 hours",
+	"Weekly 40 hours",
+	"Mon,Tue,Wed,Thur,Fri-9am-5pm"
+      ],
+      "default": "Mon,Tue,Wed,Thur,Fri-9am-5pm"
+    },
+    "description": {
+      "type": "string",
+      "title": "Support Experience",
+      "minLength": 10,
+      "maxLength": 1024
+    },
+    "location": {
+      "type": "string",
+      "title": "Location"
+    },
+    "timezone": {
+      "type": "string",
+      "title": "Time Zone",
+      "enum": [
+	"GMT - 1",
+	"GMT - 2",
+	"GMT - 3",
+	"GMT - 4",
+        "GMT",
+	"GMT + 1",
+	"GMT + 2",
+	"GMT + 3",
+	"GMT + 4"
+      ],
+      "default": "GMT + 1"
+    },
+
+    "price": {
+      "type": "number",
+      "title": "Rate/Hour in ETH"
+    },
+    "pictures": {
+      "type": "array",
+      "title": "Personal Photo",
+      "items": {
+        "type": "string",
+        "format": "data-url"
+      }
+    },
+    "resume": {
+      "type": "array",
+      "title": "Resume",
+      "items": {
+        "type": "string",
+        "format": "data-url"
+      }
+    }
+  }
+}

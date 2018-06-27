@@ -1,0 +1,76 @@
+{
+  "$schema":"http://json-schema.org/draft-06/schema#",
+  "description":"Post your online support agents requirements",
+  "type": "object",
+  "required": ["name","category","description","price"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Title",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "category": {
+      "type": "string",
+      "title": "Working Hours",
+      "enum": [
+        "Daily 2 hours",
+	"Daily 4 hours",
+	"Daily 6 hours",
+	"Daily 8 hours",
+	"Daily 10 hours",
+	"Daily 12 hours",
+	"Weekly 7 hours",
+	"Weekly 21 hours",
+	"Weekly 35 hours",
+	"Weekly 40 hours",
+	"Mon,Tue,Wed,Thur,Fri-9am-5pm"
+      ],
+      "default": "Mon,Tue,Wed,Thur,Fri-9am-5pm"
+    },
+    "resource": {
+      "type": "string",
+      "title": "Resource",
+      "enum": [
+	"Chat Agents",
+	"Chat Auditors"
+      ],
+      "default": "Chat Agents"
+    },
+    "price": {
+      "type": "number",
+      "title": "Payments in HELLO Tokens"
+    },
+    "unitsAvailable": {
+      "type": "number",
+      "title": "No of Agents",
+      "enum": [
+        1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10
+      ],
+      "default": 8
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "minLength": 10,
+      "maxLength": 1024
+    },
+    "pictures": {
+      "type": "array",
+      "title": "Select photos",
+      "items": {
+        "type": "string",
+        "format": "data-url"
+      }
+    }
+  }
+}

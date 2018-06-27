@@ -1,0 +1,98 @@
+{
+  "$schema":"http://json-schema.org/draft-06/schema#",
+  "description":"Register as Chat Auditors",
+  "type": "object",
+  "required": ["name","experience","description","price"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Title",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "experience": {
+      "type": "string",
+      "title": "Audit Experience",
+      "enum": [
+        "Fresher / No Experience",
+        "0 to 6 months experience",
+        "1 to 2 years experience",
+        "2 to 4 years experience",
+        "more than 5 years"
+      ],
+      "default":"0 to 6 months experience"
+    },
+    "interesthour": {
+      "type": "string",
+      "title": "No of Chats Audit / Hour",
+      "enum": [
+        "2 chats per hour",
+        "3 chats per hour",
+        "5 chats per hour",
+	"10 chats per hour",
+	"15 chats per hour"
+      ],
+      "default": "5 chats per hour"
+    },
+    "description": {
+      "type": "string",
+      "title": "Audit Experience",
+      "minLength": 10,
+      "maxLength": 1024
+    },
+    "auditexams": {
+      "type": "string",
+      "title": "Audit Exams passed"
+    },
+
+    "location": {
+      "type": "string",
+      "title": "Location"
+    },
+    "timezone": {
+      "type": "string",
+      "title": "Time Zone",
+      "enum": [
+	"GMT - 1",
+	"GMT - 2",
+	"GMT - 3",
+	"GMT - 4",
+        "GMT",
+	"GMT + 1",
+	"GMT + 2",
+	"GMT + 3",
+	"GMT + 4"
+      ],
+      "default": "GMT + 1"
+    },
+
+    "price": {
+      "type": "number",
+      "title": "Rate/Hour in ETH"
+    },
+    "pictures": {
+      "type": "array",
+      "title": "Experience Certificates",
+      "items": {
+        "type": "string",
+        "format": "data-url"
+      }
+    },
+    "certificate": {
+      "type": "array",
+      "title": "Audit Certificates",
+      "items": {
+        "type": "string",
+        "format": "data-url"
+      }
+    },
+    "resume": {
+      "type": "array",
+      "title": "Resume",
+      "items": {
+        "type": "string",
+        "format": "data-url"
+      }
+    }
+  }
+}
