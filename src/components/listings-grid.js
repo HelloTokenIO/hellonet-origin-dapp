@@ -44,7 +44,7 @@ class ListingsGrid extends Component {
         {contractFound && (
           <div className="listings-grid">
             {listingIds.length > 0 && <h1>{listingIds.length} Listings</h1>}
-            <div className="row">
+            <div className="list-group">
               {showListingsIds.map(listingId => (
                 <ListingCard listingId={listingId} key={listingId} />
               ))}

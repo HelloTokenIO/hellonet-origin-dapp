@@ -35,22 +35,31 @@ class ListingCard extends Component {
 		console.log("Experience" + experience);
 
     return (
-      <div className={`col-12 listing-card${loading ? ' loading' : ''}`}>
+      <div className={`col-12 list-group-item list-group-item-action flex-column align-items-start listing-card${loading ? ' loading' : ''}`}>
+        <div className="col-12">
         <Link to={`/listing/${address}`}>
-          {photo &&
-            <div className="photo" style={{ backgroundImage: `url("${photo}")` }}></div>
-          }
-          {!photo &&
-            <div className="image-container d-flex justify-content-center">
-              <img src="images/default-image.svg" alt="camera icon" />
+          <div className="row">
+          <div className="col-6">
+              <div className="category placehold">{category} 
+              </div>
+              <h2 className="col-6 title placehold text-truncate">{name}</h2>
+              {price >= 0 && <ListingCardPrices price={price} unitsAvailable={unitsAvailable} />}
             </div>
-          }
-          <div className="category placehold">{category} 
 
-		  </div>
-          <h2 className="title placehold text-truncate">{name}</h2>
-          {price >= 0 && <ListingCardPrices price={price} unitsAvailable={unitsAvailable} />}
-        </Link>
+            <div className="col-6">
+             {photo &&
+                <div className="photo" style={{ backgroundImage: `url("${photo}")` }}>
+                </div>
+              }
+              {!photo &&
+                <div className="col-6 image-container d-flex justify-content-center">
+                  <img src="images/default-image.svg" alt="camera icon" />
+                </div>
+              }
+            </div>
+          </div>
+          </Link>
+        </div>
       </div>
     )
   }
