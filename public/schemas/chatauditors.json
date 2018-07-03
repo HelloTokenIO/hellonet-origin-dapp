@@ -4,6 +4,11 @@
   "type": "object",
   "required": ["name","experience","description","price"],
   "properties": {
+    "listingTypeId":{
+      "type": "number",
+      "title": "listingTypeId",
+      "default":3
+    },
     "name": {
       "type": "string",
       "title": "Title",

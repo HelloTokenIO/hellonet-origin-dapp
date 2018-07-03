@@ -40,9 +40,9 @@ class ListingCreate extends Component {
     ]
 */
     this.schemaList = [
-      {type: 'recruit', name: 'Recruit Agents', 'img': 'tickets.jpg'},
-      {type: 'chatagents', name: 'Chat Agent Profile', 'img': 'services.jpg'},
-      {type: 'chatauditors', name: 'Chat Auditor Profile', 'img': 'announcements.jpg'}
+      {type: 'recruit', name: 'I want to Recruit Agents', 'img': 'tickets.jpg'},
+      {type: 'chatagents', name: 'I want to Create Chat Agent Profile', 'img': 'services.jpg'},
+      {type: 'chatauditors', name: 'I want to Create Chat Auditor Profile', 'img': 'announcements.jpg'}
     ]
 
     this.state = {
@@ -144,7 +144,7 @@ class ListingCreate extends Component {
 
               <div className="col-md-5">
                 <label>STEP {Number(this.state.step)}</label>
-                <h2>What type of listing do you want to create?</h2>
+                <h2>Please select your action</h2>
                 <div className="schema-options">
                   {this.schemaList.map(schema => (
                     <div

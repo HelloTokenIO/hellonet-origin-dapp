@@ -1,4 +1,4 @@
-import Origin from 'origin'
+import Origin from './../ref/index'
 import Web3 from 'web3'
 
 /*

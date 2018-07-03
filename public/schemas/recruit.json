@@ -2,8 +2,14 @@
   "$schema":"http://json-schema.org/draft-06/schema#",
   "description":"Post your online support agents requirements",
   "type": "object",
+  "listingTypeId":"1",
   "required": ["name","category","description","price"],
   "properties": {
+    "listingTypeId":{
+      "type": "number",
+      "title": "listingTypeId",
+      "default":1
+    },
     "name": {
       "type": "string",
       "title": "Title",

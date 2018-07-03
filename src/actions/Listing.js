@@ -38,8 +38,10 @@ export function getListingIds() {
           hideList = await response.json()
         }
       }
+      console.log('Listings', origin.listings);
 
       const ids = await origin.listings.allIds()
+      console.log('Listings data:', ids);
       const showIds = ids ? ids.filter(i => hideList.indexOf(i) < 0) : []
 
       dispatch({
